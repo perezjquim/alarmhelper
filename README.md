@@ -37,21 +37,21 @@ Create a BroadcastReceiver - e.g. Action:
 ```java
 public class Action extends BroadcastReceiver
 {
-    @Override
-    public void onReceive(Context context, Intent intent)
-    {
-        System.out.println("WHATEVER");
-    }
+	@Override
+	public void onReceive(Context context, Intent intent)
+	{
+		System.out.println("WHATEVER");
+	}
 }
 ```
 
 AndroidManifest.xml:
 ```gradle
 <receiver android:name=".Action" android:exported="true">
-    <intent-filter>
-        <action android:name="myalarm" >
-        </action>
-    </intent-filter>
+	<intent-filter>
+		<action android:name="myalarm" >
+		</action>
+	</intent-filter>
 </receiver>
 ```
 
