@@ -7,16 +7,16 @@ Helper class that provides Alarm functionalities in a more simplified way.
 Build.gradle (root):
 ```gradle
 allprojects {
-    repositories {
-    	(...)
-        mavenCentral()
-        maven{
-            url  'https://oss.sonatype.org/content/repositories/snapshots/'
-            name 'OSS-Sonatype'
-        }
-        maven { url "https://jitpack.io" }
-        (...)
-    }
+	repositories {
+		(...)
+		mavenCentral()
+		maven{
+		    url  'https://oss.sonatype.org/content/repositories/snapshots/'
+		    name 'OSS-Sonatype'
+		}
+		maven { url "https://jitpack.io" }
+		(...)
+	}
 }
 ```
 
@@ -32,7 +32,7 @@ dependencies
 
 ## Examples of use
 
-Create a BroadcastReceiver - e.g. Action.java:
+Create a BroadcastReceiver - e.g. Action:
 (here you can define what happens when the alarm is triggered)
 ```java
 public class Action extends BroadcastReceiver
@@ -59,7 +59,7 @@ Schedule an alarm that is triggered every 5 minutes:
 ```java
 {
 	(...)
-	AlarmManager.scheduleAlarm(context,"myalarm",5*1000,false);
+	AlarmManager.scheduleAlarm(context,"myalarm",5*1000,true);
 	(...)
 }
 ```
@@ -68,7 +68,7 @@ Schedule an alarm that is triggered in 10 minutes (one-time only):
 ```java
 {
 	(...)
-	AlarmManager.scheduleAlarm(context,"myalarm",10*1000,true);
+	AlarmManager.scheduleAlarm(context,"myalarm",10*1000,false);
 	(...)
 }
 ```
