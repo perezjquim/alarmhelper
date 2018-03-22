@@ -8,7 +8,7 @@ import android.os.SystemClock;
 
 public abstract class AlarmHelper
 {
-    public static void setAlarm(Context context, String receiverName, long triggerTime, boolean repeating)
+    public static void scheduleAlarm(Context context, String receiverName, long triggerTime, boolean repeating)
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(receiverName);
