@@ -45,7 +45,7 @@ public class Action extends BroadcastReceiver
 }
 ```
 
-AndroidManifest.xml:
+Put your BroadcastReceiver in the manifest:
 ```gradle
 <receiver android:name=".Action" android:exported="true">
 	<intent-filter>
