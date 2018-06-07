@@ -59,7 +59,7 @@ Schedule an alarm that is triggered every 5 minutes:
 ```java
 {
 	(...)
-	AlarmManager.scheduleAlarm(context,"myalarm",5*1000,true);
+	AlarmManager.scheduleRepeatingAlarm(context,"myalarm",5*60*1000);
 	(...)
 }
 ```
@@ -68,7 +68,7 @@ Schedule an alarm that is triggered in 10 minutes (one-time only):
 ```java
 {
 	(...)
-	AlarmManager.scheduleAlarm(context,"myalarm",10*1000,false);
+	AlarmManager.scheduleStandardAlarm(context,"myalarm",10*60*1000);
 	(...)
 }
 ```
