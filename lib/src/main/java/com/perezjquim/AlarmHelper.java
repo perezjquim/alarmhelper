@@ -13,7 +13,7 @@ public abstract class AlarmHelper
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(receiverName);
-        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,0);
+        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
             alarmMgr.cancel(pi);
@@ -30,7 +30,7 @@ public abstract class AlarmHelper
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(receiverName);
-        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,0);
+        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
             alarmMgr.cancel(pi);
@@ -48,7 +48,7 @@ public abstract class AlarmHelper
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(receiverName);
-        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,0);
+        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
             alarmMgr.cancel(pi);
@@ -66,7 +66,7 @@ public abstract class AlarmHelper
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent i = new Intent(receiverName);
-        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,0);
+        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
             alarmMgr.cancel(pi);
@@ -78,8 +78,5 @@ public abstract class AlarmHelper
         {
             System.err.println("AlarmManager has a null pointer");
         }
-
-        Calendar c = Calendar.getInstance();
-
     }
 }
