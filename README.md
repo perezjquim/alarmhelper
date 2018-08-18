@@ -59,14 +59,14 @@ Schedule an alarm that is triggered every 5 minutes:
 ```java
 {
 	(...)
-	AlarmHelper.scheduleRepeatingAlarm(context,"myalarm",5*60*1000);
+	AlarmHelper.scheduleRepeatingAlarm(context,Action.class,5*60*1000);
 	(...)
 
 	// OR
 
 	(...)
 	Calendar trigger = (...)
-	AlarmHelper.scheduleRepeatingAlarm(context,"myalarm",trigger,5*60*1000);
+	AlarmHelper.scheduleRepeatingAlarm(context,Action.class,trigger,5*60*1000);
 	(...)
 }
 ```
@@ -75,14 +75,14 @@ Standard alarm - an alarm that is triggered in 10 minutes (one-time only):
 ```java
 {
 	(...)
-	AlarmHelper.scheduleStandardAlarm(context,"myalarm",10*60*1000);
+	AlarmHelper.scheduleStandardAlarm(context,Action.class,10*60*1000);
 	(...)
 
 	// OR
 
 	(...)
 	Calendar c = (...)
-	AlarmHelper.scheduleStandardAlarm(context,"myalarm",c);
+	AlarmHelper.scheduleStandardAlarm(context,Action.class,c);
 	(...)
 }
 ```
