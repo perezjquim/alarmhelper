@@ -9,10 +9,10 @@ import java.util.Calendar;
 
 public abstract class AlarmHelper
 {
-    public static void scheduleStandardAlarm(Context context, String receiverName, Calendar trigger)
+    public static void scheduleStandardAlarm(Context context, Class receiver, Calendar trigger)
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(receiverName);
+        Intent i = new Intent(context,receiver);
         PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
@@ -26,10 +26,10 @@ public abstract class AlarmHelper
         }
     }
 
-    public static void scheduleStandardAlarm(Context context, String receiverName, long triggerTime)
+    public static void scheduleStandardAlarm(Context context, Class receiver, long triggerTime)
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(receiverName);
+        Intent i = new Intent(context,receiver);
         PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
@@ -44,10 +44,10 @@ public abstract class AlarmHelper
         }
     }
 
-    public static void scheduleRepeatingAlarm(Context context, String receiverName, long interval)
+    public static void scheduleRepeatingAlarm(Context context, Class receiver, long interval)
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(receiverName);
+        Intent i = new Intent(context,receiver);
         PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
@@ -62,10 +62,10 @@ public abstract class AlarmHelper
         }
     }
 
-    public static void scheduleRepeatingAlarm(Context context, String receiverName, Calendar trigger, long interval)
+    public static void scheduleRepeatingAlarm(Context context, Class receiver, Calendar trigger, long interval)
     {
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent i = new Intent(receiverName);
+        Intent i = new Intent(context,receiver);
         PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
         if (alarmMgr != null)
         {
