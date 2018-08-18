@@ -61,14 +61,28 @@ Schedule an alarm that is triggered every 5 minutes:
 	(...)
 	AlarmHelper.scheduleRepeatingAlarm(context,"myalarm",5*60*1000);
 	(...)
+
+	// OR
+
+	(...)
+	Calendar trigger = (...)
+	AlarmHelper.scheduleRepeatingAlarm(context,"myalarm",trigger,5*60*1000);
+	(...)
 }
 ```
 
-Schedule an alarm that is triggered in 10 minutes (one-time only):
+Standard alarm - an alarm that is triggered in 10 minutes (one-time only):
 ```java
 {
 	(...)
 	AlarmHelper.scheduleStandardAlarm(context,"myalarm",10*60*1000);
+	(...)
+
+	// OR
+
+	(...)
+	Calendar c = (...)
+	AlarmHelper.scheduleStandardAlarm(context,"myalarm",c);
 	(...)
 }
 ```
