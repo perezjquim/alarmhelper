@@ -32,7 +32,7 @@ public abstract class AlarmHelper
         PendingIntent pi = PendingIntent.getBroadcast(context,0,i,0);
         if (alarmMgr != null)
         {
-            alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
+            alarmMgr.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                     SystemClock.elapsedRealtime() + triggerTime,
                     triggerTime, pi);
         }
