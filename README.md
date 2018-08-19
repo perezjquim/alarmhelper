@@ -49,8 +49,7 @@ Put your BroadcastReceiver in the manifest:
 ```gradle
 <receiver android:name=".Action" android:exported="true">
 	<intent-filter>
-		<action android:name="myalarm" >
-		</action>
+		<action android:name="com.perezjquim.testapp.Action"/>
 	</intent-filter>
 </receiver>
 ```
