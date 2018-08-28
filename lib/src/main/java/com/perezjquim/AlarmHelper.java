@@ -79,4 +79,19 @@ public abstract class AlarmHelper
             System.err.println("AlarmManager has a null pointer");
         }
     }
+
+    public static void cancelAlarm(Context context, Class receiver)
+    {
+        AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        Intent i = new Intent(context,receiver);
+        PendingIntent pi = PendingIntent.getBroadcast(context,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
+        if (alarmMgr != null)
+        {
+            alarmMgr.cancel(pi);
+        }
+        else
+        {
+            System.err.println("AlarmManager has a null pointer");
+        }
+    }
 }
